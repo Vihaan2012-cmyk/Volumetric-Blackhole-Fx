@@ -19,7 +19,7 @@ set "DOTNET=dotnet"
 if exist "E:\Tools\dotnet\dotnet.exe" set "DOTNET=E:\Tools\dotnet\dotnet.exe"
 if defined KSPVE_DOTNET set "DOTNET=%KSPVE_DOTNET%"
 
-set "UNITY=C:\Program Files\Unity\Hub\Editor\2019.4.18f1\Editor\Unity.exe"
+set "UNITY=E:\Tools\Unity\2019.4.18f1\Editor\Unity.exe"
 if defined UNITY_EXE set "UNITY=%UNITY_EXE%"
 
 set "OUT=%ROOT%\out"
@@ -27,7 +27,7 @@ set "SHADEROUT=%OUT%\shaders"
 set "BUNDLE=%SHADEROUT%\kspve.shaderbundle"
 set "BIN=%ROOT%\src\KSPVE\bin\%CFG%\net48"
 
-if not defined KSPDIR set "KSPDIR=D:\SteamLibrary\steamapps\common\ModTestingKSP"
+if not defined KSPDIR set "KSPDIR=E:\SteamLibrary\steamapps\common\Kerbal Space Program"
 if not exist "%KSPDIR%\KSP_x64_Data\Managed\UnityEngine.dll" echo WARNING: KSP assemblies not found under "%KSPDIR%".
 
 echo === [1/3] Build ===
@@ -85,7 +85,7 @@ set "VER="
 for /f "usebackq delims=" %%V in (`powershell -NoProfile -Command "$v=(Get-Content '%STAGE%\KSPVE.version' -Raw | ConvertFrom-Json).VERSION; '{0}.{1}.{2}' -f $v.MAJOR,$v.MINOR,$v.PATCH"`) do set "VER=%%V"
 if not defined VER ( echo Could not read version from KSPVE.version. & exit /b 1 )
 
-set "ZIP=%OUT%\KSPVE-Reworked-%VER%.zip"
+set "ZIP=%OUT%\KSPVE-%VER%.zip"
 del /q "%ZIP%" 2>nul
 pushd "%OUT%\package"
 tar -a -c -f "%ZIP%" GameData

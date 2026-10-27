@@ -16,7 +16,7 @@ if not exist "%ROOT%\KSPVE.sln" for %%I in ("%ROOT%\..") do set "ROOT=%%~fI"
 if not exist "%ROOT%\KSPVE.sln" ( echo KSPVE.sln not found. & exit /b 1 )
 
 set "KSP=%KSPDIR%"
-if not defined KSP set "KSP=D:\SteamLibrary\steamapps\common\ModTestingKSP"
+if not defined KSP set "KSP=E:\SteamLibrary\steamapps\common\Kerbal Space Program"
 set "SRCSAVE=%SOURCE_SAVE%"
 if not defined SRCSAVE set "SRCSAVE=Test Save"
 

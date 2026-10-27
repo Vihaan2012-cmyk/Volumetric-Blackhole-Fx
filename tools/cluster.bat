@@ -12,7 +12,7 @@ if /i not "%LAYOUT%"=="full" if /i not "%LAYOUT%"=="lite" if /i not "%LAYOUT%"==
 )
 
 set "KSP=%KSPDIR%"
-if not defined KSP set "KSP=D:\SteamLibrary\steamapps\common\ModTestingKSP"
+if not defined KSP set "KSP=E:\SteamLibrary\steamapps\common\Kerbal Space Program"
 set "KSS2=%KSP%\GameData\KSS2"
 set "PARKED=%KSP%\GameData_KSPVE_parked\KSS2"
 if not exist "%KSS2%" ( echo KSS2 not found at %KSS2%. & exit /b 1 )
